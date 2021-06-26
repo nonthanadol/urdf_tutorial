@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<robot name="origins">
+  <link name="base_link">
+    <visual>
+      <geometry>
+        <cylinder length="0.6" radius="0.2"/>
+      </geometry>
+    </visual>
+  </link>
+
+  <link name="right_leg">
+    <visual>
+      <geometry>
+        <box size="1 0.1 0.5"/>
+      </geometry>
+      <!-- CG part base on joint -->
+      <origin rpy="0 30 0" xyz="0 0 0"/>
+    </visual>
+  </link>
+
+  <joint name="base_to_right_leg" type="fixed">
+    <parent link="base_link"/>
+    <child link="right_leg"/>
+    <!-- origin xyz="0 -0.22 0.25" ##distance between origin and joint -->
+    <origin xyz="0.25 0 0.3"/> 
+  </joint>
+
+</robot>
